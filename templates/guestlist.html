@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div>
+    <table class="center">
+          <tr>
+            <th> </th>
+            <th> Guests </th>
+            <th> {{numguests}}</th>
+            <th> </th> 
+          </tr>
+        {% for guest in guests %}
+          <tr>
+            <td> </td>
+            <td>{{ guest['name']}}</td>
+            <td> <img class="envelope" src="{{url_for('static', filename='/images/icons/%d.png'|format(guest['pic']))}}"></td>
+            <td> </td>
+          </tr>
+        {% endfor %}
+        </table>      
+</div> 
+{% endblock %}
